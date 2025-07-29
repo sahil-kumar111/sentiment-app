@@ -1,19 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Sentiment Analysis</title>
+  <meta charset="UTF-8">
+  <title>Sentiment Analyzer</title>
 </head>
 <body>
-    <h1>Sentiment Analysis</h1>
+  <h2>Enter your review</h2>
+  <form action="/predict" method="post">
+    <textarea name="review" rows="4" cols="50" required></textarea><br><br>
+    <button type="submit">Analyze Sentiment</button>
+  </form>
 
-    <form method="POST" action="/predict">
-        <textarea name="review" rows="5" cols="50" placeholder="Enter your review here..." required></textarea><br><br>
-        <input type="submit" value="Analyze">
-    </form>
-
-    {% if sentiment %}
-        <h2>Review: "{{ review }}"</h2>
-        <h2>Sentiment: {{ sentiment }}</h2>
-    {% endif %}
+  {% if review %}
+    <h3>Input:</h3>
+    <p>{{ review }}</p>
+    <h3>Predicted Sentiment:</h3>
+    <p><strong>{{ sentiment }}</strong></p>
+  {% endif %}
 </body>
 </html>
