@@ -5,13 +5,15 @@
 </head>
 <body>
     <h1>Sentiment Analysis</h1>
+
     <form method="POST" action="/predict">
-        <textarea name="review" rows="4" cols="50" placeholder="Enter your review here..."></textarea><br><br>
+        <textarea name="review" rows="5" cols="50" placeholder="Enter your review here..." required></textarea><br><br>
         <input type="submit" value="Analyze">
     </form>
 
-    {% if prediction %}
-        <h2>Prediction: {{ prediction }}</h2>
+    {% if sentiment %}
+        <h2>Review: "{{ review }}"</h2>
+        <h2>Sentiment: {{ sentiment }}</h2>
     {% endif %}
 </body>
 </html>
