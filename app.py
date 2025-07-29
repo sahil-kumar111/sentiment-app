@@ -22,5 +22,5 @@ def predict():
         return render_template('index.html', review=review, sentiment=sentiment)
 
 if __name__ == '__main__':
-    port = int(os.environ.get('PORT', 5000))
-    app.run(host='0.0.0.0', port=port)
+    port = int(os.environ.get('PORT', 10000))  # Default to 10000 if PORT not set
+    app.run(debug=False, host='0.0.0.0', port=port)
